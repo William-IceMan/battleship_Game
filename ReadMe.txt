@@ -7,7 +7,7 @@
 =====================================================================
 			COMMAND TO RUN
 =====================================================================
-Use following command. For more information, see attached screenshot
+Use following command. For more information, see attached screenshot(Output.png)
 java -jar battleship-1.0.0.jar <Path of the input file>
 
 <E.g Path of the input file>	D:\test-input-player1.txt
@@ -19,6 +19,13 @@ java -jar battleship-1.0.0.jar <Path of the input file>
 Q 1 1 A1 B2
 P 2 1 D4 C3
 A1 B2 B2 C3 C4
+A1 B2 B3 A1 D1 E1 D4 D4 D5 D5
+
+5 E
+2
+Q 1 1 A1 B2
+P 2 1 D4 C3
+A1 B2 B2 B3
 A1 B2 B3 A1 D1 E1 D4 D4 D5 D5
 2 0 0 0 0
 0 0 0 0 0

@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.pb.game.battleship</groupId>
-	<artifactId>battleship</artifactId>
-	<version>1.0.2</version>
+	<groupId>com.thoughtworks.playGame</groupId>
+	<artifactId>battleshipGame</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>Battleship V3</name>
@@ -28,6 +28,12 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>
 		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -65,111 +71,11 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>com.pb.game.battleship.Game</mainClass>
+							<mainClass>com.thoughtworks.game.PlayGame</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
-			<!-- <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<configLocation>conf/SSC_Checkstyle_Configuration.xml</configLocation>
-					<encoding>UTF-8</encoding>
-					<consoleOutput>true</consoleOutput>
-					<failsOnError>true</failsOnError>
-					<linkXRef>false</linkXRef>
-				</configuration>
-				<executions>
-					<execution>
-						<id>checkstyle</id>
-						<phase>package</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin> -->
 		</plugins>
 	</build>
-
-	<!-- Sonar START -->
-	<profiles>
-		<profile>
-			<id>sonar-coverage</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.jacoco</groupId>
-							<artifactId>jacoco-maven-plugin</artifactId>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-				<plugins>
-					<plugin>
-						<groupId>org.jacoco</groupId>
-						<artifactId>jacoco-maven-plugin</artifactId>
-						<version>0.8.1</version>
-						<configuration>
-							<append>true</append>
-						</configuration>
-						<executions>
-							<execution>
-								<id>agent-for-ut</id>
-								<goals>
-									<goal>prepare-agent</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>agent-for-it</id>
-								<goals>
-									<goal>prepare-agent-integration</goal>
-								</goals>
-							</execution>
-							<execution>
-								<id>jacoco-site</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>report</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<!-- <profile> <id>sonar</id> <activation> <activeByDefault>true</activeByDefault> 
-			</activation> <properties> <sonar.host.url>http://54.237.195.10:9000</sonar.host.url> 
-			</properties> </profile> -->
-	</profiles>
-	<!-- Sonar END -->
-
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.17</version>
-				<reportSets>
-					<reportSet>
-						<reports>
-							<report>checkstyle</report>
-						</reports>
-					</reportSet>
-				</reportSets>
-				<configuration>
-					<configLocation>conf/SSC_Checkstyle_Configuration.xml</configLocation>
-					<encoding>UTF-8</encoding>
-					<consoleOutput>true</consoleOutput>
-					<failsOnError>true</failsOnError>
-					<linkXRef>false</linkXRef>
-				</configuration>
-			</plugin>
-		</plugins>
-	</reporting>
 </project>
